@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 
+		<property name="connection.url"><![CDATA[jdbc:mysql://10.221.20.18:3306/test2?useUnicode=true&characterEncoding=utf8]]></property>
+		<property name="connection.password">fhXnHynSDS</property>
+		-->
+		<property name="connection.url"><![CDATA[jdbc:mysql://localhost:3306/dzjk?useUnicode=true&characterEncoding=utf8]]></property>
+		<property name="connection.password">root</property>
+		<property name="connection.username">root</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		
+		<!-- 连接池配置 -->
+		<property name="show_sql">false</property>
+
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.max_statements">0</property>
+		<property name="hibernate.c3p0.idle_test_period">60</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		<property name="hibernate.c3p0.validate">true</property>
+		<!-- 是否自动生成表结构
+		-->
+		<property name="hbm2ddl.auto">update</property>
+		
+		<!-- 注解形式	-->
+		<!-- 
+		<mapping class="com.template.model.Kdd_Info"/>
+		<mapping class="com.template.model.Kdd_ContactInfo"/>
+		 -->
+		<mapping class="com.template.model.Org_Department"/>
+		<mapping class="com.template.model.Org_User"/>
+		<mapping class="com.template.model.Qxgl_Permission"/>
+		<mapping class="com.template.model.Org_ZhiWei"/>
+		<mapping class="com.template.model.TLevel"/>
+		<mapping class="com.template.model.Sys_Message"/>
+		<mapping class="com.dzjk.model.DZJK_WuZiType"/>
+		<mapping class="com.dzjk.model.DZJK_WuZi"/>
+		<mapping class="com.dzjk.model.DZJK_PersionWuZi"/>
+		<mapping class="com.dzjk.model.DZJK_ShenqingWuZi"/>
+		<mapping class="com.dzjk.model.DZJK_WuZi_BaoXiu"/>
+		<mapping class="com.dzjk.model.DZJK_DevicePosition"/>
+		<mapping class="com.dzjk.model.DZJK_Device"/>
+		<mapping class="com.dzjk.model.DZJK_DeviceTask"/>
+		<mapping class="com.dzjk.model.DZJK_WuZi_Baofei"/>
+		<!-- 映射文件形式
+		<mapping resource="com/template/model/Org_Department.hbm.xml" />
+		 -->
+	</session-factory>
+
+</hibernate-configuration>

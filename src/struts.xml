@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.ui.theme" value="simple"/>
+    
+    <package name="system"  extends="struts-default" namespace="/">
+    	<action name="myUpload" class="myUpload">
+        	<result name="success">/myWeb/report/report_weixiu.jsp</result>
+        </action> 
+    	<action name="dzjk_ReportAction" class="dzjk_ReportAction">
+        	<result name="success">/myWeb/report/report_weixiu.jsp</result>
+        </action> 
+         <action name="dZJK_DeviceManageAction" class="dZJK_DeviceManageAction">
+        	<result name="success">/myWeb/dzjk/device.jsp</result>
+        </action> 
+        <action name="dZJK_DevicePositionManageAction" class="dZJK_DevicePositionManageAction">
+        	<result name="success">/myWeb/dzjk/device_position.jsp</result>
+        </action> 
+        <action name="dZJK_PersionWuZiAction" class="dZJK_PersionWuZiAction">
+        	<result name="success">/myWeb/dzjk/persion_info.jsp</result>
+        </action> 
+        <action name="dZJK_WuZiAction" class="dZJK_WuZiAction">
+        	<result name="success">/myWeb/dzjk/wuzi.jsp</result>
+        </action> 
+        <action name="dZJK_WuZiTypeAction" class="dZJK_WuZiTypeAction">
+        	<result name="success">/myWeb/dzjk/wuzitype.jsp</result>
+        </action> 
+        <action name="zhiWeiAction" class="zhiWeiAction">
+        	<result name="success">/myWeb/system/zhiweixinxi.jsp</result>
+        </action> 
+        <action name="treeAction" class="treeAction">
+        	<result name="success">/myWeb/system/index.jsp</result>
+        </action> 
+        <action name="roleAction" class="roleAction">
+        	<result name="success">/myWeb/system/qxxx.jsp</result>
+        </action> 
+        <action name="loginAction" class="loginAction">
+        	<result name="success">/myWeb/system/home.jsp</result>
+        	<result name="error">/myWeb/system/login.jsp</result>
+        </action> 
+        <action name="authorizationUserAction" class="authorizationUserAction">
+        	<result name="success">/myWeb/system/qxyh.jsp</result>
+        </action> 
+        <action name="ogrDepartmentAction" class="ogrDepartmentAction">
+        	<result name="success">/myWeb/org/org_department.jsp</result>
+        </action> 
+        <action name="kddInfoAction" class="kddInfoAction">
+        	<result name="success">/myWeb/kdd/kdd.jsp</result>
+        	<result name="login" type="redirect">/myWeb/login/login.jsp</result>
+        	<result name="printType1_view">/myWeb/kdd/printType1_view.jsp</result>
+        	<result name="printType2_view">/myWeb/kdd/printType2_view.jsp</result>
+        	<result name="printType3_view">/myWeb/kdd/printType3_view.jsp</result>
+        	<result name="printType1">/myWeb/kdd/printType1.jsp</result>
+        	<result name="printType2">/myWeb/kdd/printType2.jsp</result>
+        	<result name="printType3">/myWeb/kdd/printType3.jsp</result>
+        </action> 
+        <action name="ogrUserAction" class="ogrUserAction">
+        	<result name="success">/myWeb/org/org_user.jsp</result>
+        </action> 
+    </package>  
+</struts>
+
+
+
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   					   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd ">
+
+
+	<!-- 特殊的Beans 
+	-->
+	<bean id="myTimerTask" class="com.dzjk.action.MyTimerTask" scope="prototype">
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="myUpload" class="com.template.action.MyUpload" scope="prototype">
+		<property name="sysUtil" ref="templdateSysUtil"/>
+		<property name="service" ref="service"/>
+	</bean>
+	
+	<!--Struts2 Action -->
+	<bean id="dzjk_ReportAction" class="com.dzjk.action.DZJK_ReportAction" scope="prototype">
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="dZJK_DeviceManageAction" class="com.dzjk.action.DZJK_DeviceManageAction" scope="prototype">
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="dZJK_DevicePositionManageAction" class="com.dzjk.action.DZJK_DevicePositionManageAction" scope="prototype">
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="dZJK_PersionWuZiAction" class="com.dzjk.action.DZJK_PersionWuZiAction" scope="prototype">
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="dZJK_WuZiAction" class="com.dzjk.action.DZJK_WuZiAction" scope="prototype">
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="dZJK_WuZiTypeAction" class="com.dzjk.action.DZJK_WuZiTypeAction" scope="prototype">
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="zhiWeiAction" class="com.template.action.ZhiWeiAction" scope="prototype">
+		<property name="service" ref="service"/>
+	</bean>
+	
+	
+	<bean id="ogrUserAction" class="com.template.action.OgrUserAction" scope="prototype">
+		<property name="orgUserService" ref="orgUserService"/>
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="ogrDepartmentAction" class="com.template.action.OgrDepartmentAction" scope="prototype">
+		<property name="orgDepartmentService" ref="orgDepartmentService"/>
+		<property name="service" ref="service"/>
+	</bean>
+	<bean id="treeAction" class="com.template.action.TreeAction" scope="prototype">
+		<property name="orgUserService" ref="orgUserService"/>
+		<property name="treeService" ref="treeService"/>
+	</bean>
+	<bean id="roleAction" class="com.template.action.RoleAction" scope="prototype">
+		<property name="roleService" ref="roleService"/>
+		<property name="sysUtil" ref="templdateSysUtil"/>
+	</bean>
+	<bean id="loginAction" class="com.template.action.LoginAction" scope="prototype">
+		<property name="service" ref="service"/>
+		<property name="loginService" ref="loginService"/>
+	</bean>
+</beans>

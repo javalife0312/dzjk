@@ -1,0 +1,31 @@
+<html>
+	<head>
+	<title></title>
+	</head>
+<body>
+	<object classid="CLSID:76A64158-CB41-11D1-8B02-00600806D9B6"
+		id="locator" style="display:none;visibility:hidden"></object>
+	<object classid="CLSID:75718C9A-F029-11d1-A1AC-00C04FB6C223" id="foo"
+		style="display:none;visibility:hidden"></object>
+</body>
+</html>
+<script language="javascript">
+	var sIPAddr = "";
+	var service = locator.ConnectServer();
+	service.Security_.ImpersonationLevel = 3;
+	service.InstancesOfAsync(foo, 'Win32_NetworkAdapterConfiguration');
+</script>
+
+<script FOR="foo" EVENT="OnObjectReady(objObject,objAsyncContext)"
+	LANGUAGE="JScript">
+         if(objObject.IPEnabled != null && objObject.IPEnabled != "undefined" && objObject.IPEnabled == true){
+                           if(objObject.IPEnabled && objObject.IPAddress(0) !=null && objObject.IPAddress(0) != "undefined")
+                                         sIPAddr = objObject.IPAddress(0);
+          }
+</script>
+<script FOR="foo"
+	EVENT="OnCompleted(hResult,pErrorObject, pAsyncContext)"
+	LANGUAGE="JScript">
+	window.location.href="loginAction!loginIp?ip="+sIPAddr;
+</script>
+

@@ -1,0 +1,9 @@
+/applicationContext.xml
+/beans-action.xml
+/beans-dao.xml
+/beans-service.xml
+/com/
+/hibernate.cfg.xml
+/log4j.properties
+/struts.xml
+/system.properties

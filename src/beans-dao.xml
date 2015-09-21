@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.5.xsd ">
+	
+	
+	<!-- Dao -->
+	<bean id="dao" class="com.template.daoImpl.DaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+
+
+	
+	<bean id="baseDao" class="com.template.daoImpl.BaseDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="orgDepartmentDao" class="com.template.daoImpl.OrgDepartmentDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="treeDao" class="com.template.daoImpl.TreeDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="roleDao" class="com.template.daoImpl.RoleDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+
+	<bean id="loginDao" class="com.template.daoImpl.LoginDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="templdateSysUtil" class="com.template.util.SysUtil">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+</beans>
